@@ -1,0 +1,33 @@
+<ion-header hideBackButton>
+  <ion-navbar>
+    <ion-title>
+      Sign Up
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list class="signup">
+
+    <ion-item class="form">
+      <ion-label stacked class="title">Email</ion-label>
+      <ion-input type="text" class="mail" placeholder="Email Address" [(ngModel)]="user.email" (ionChange)="validEmailAddress()"></ion-input>
+      <ion-label *ngIf="validEmail" class="check"> <ion-icon name="md-checkmark"></ion-icon></ion-label>
+    </ion-item>
+
+    <ion-item class="form">
+      <ion-label stacked class="title">Password</ion-label>
+      <ion-input type="password" class="mail" placeholder="Password" [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+
+    <ion-item class="form">
+      <ion-label stacked class="title">Confirm Password</ion-label>
+      <ion-input type="password" class="mail" placeholder="Confirm Password" [(ngModel)]="user.confirm_pw"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button full large color="secondary" (click)="doSignup()">Sign Up</button>
+  <p class="nav">My tapping Sign Up . I agree to MyID's Terms of Service and Privacy Statement.</p>
+
+</ion-content>

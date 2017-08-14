@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Log In
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list class="signup">
+
+    <ion-item>
+      <ion-label stacked class="title">Email</ion-label>
+      <ion-input type="text" class="mail" placeholder="Email" [(ngModel)]="user.email" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked class="title">Password</ion-label>
+      <ion-input type="password" class="mail" placeholder="Password" [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button full large color="secondary" (click)="doLogin()">Log In</button>
+  <button ion-button clear item-end icon-right class="forgot_btn" (click)="goForgotPage()">Forgot Password<ion-icon style="color: #0093ca;" name="arrow-forward"></ion-icon></button>
+</ion-content>

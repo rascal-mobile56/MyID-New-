@@ -1,0 +1,91 @@
+page-home {
+
+  .logo{
+    width: 35vw;
+    margin: 0 auto;
+    display: block;
+    margin-top: 5vh;
+    margin-bottom: 20px;
+  }
+  .box{
+    width: 100%;
+    padding: 10px 16px;
+    height: auto;
+    margin-top: 15px;
+    background-color: white;
+    border-radius: 5px;
+    position: relative;
+    .icon{
+      width: 11vw;
+      max-width: 70px;
+      position: absolute;
+      right: 20px;
+      top: 15px;
+    }
+    .noti{
+      width: 19px;
+      right: 30px;
+      top: 7px;
+    }
+    button{
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+  }
+  .timing{
+    padding-left: 0;
+    .title{
+      .row1{
+        font-size: 15px;
+        color: gray;
+      }
+    }
+    .des{
+      .row2{
+        font-size: 23px;
+        font-weight: 200;
+        color: #1a1a1a;
+      }
+
+    }
+
+  }
+  .com{
+    position: relative;
+    width: 50%;
+    display: inline-block;
+    float: left;
+    .notification{
+      position: absolute;
+      top: 5px;
+      right: 32px;
+      img{
+        width: 25px;
+        height: 25px;
+      }
+      p{
+        position: absolute;
+        top: -16px;
+        right: 7px;
+        font-size: 18px;
+        color: white;
+      }
+    }
+    img{
+      display: block;
+      width: 125px;
+      height: 115px;
+      margin: 0 auto;
+    }
+    p{
+      text-align: center;
+    }
+  }
+  .section{
+    width: calc(100vw - 32px);
+    border-top: 1px solid gray;
+    margin-left: -16px;
+  }
+
+
+}

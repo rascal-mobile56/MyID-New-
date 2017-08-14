@@ -1,0 +1,17 @@
+
+
+
+
+<ion-content class="main-view">
+  <div class="overlay" (click)="dismiss()"></div>
+  <div class="modal_content">
+    <div class="title">Select category to add</div>
+    <ion-list>
+      <ion-item class="category" *ngFor="let item of categories">
+        <img src="assets/icon/{{item.icon}}.png" alt="">
+        <p>{{item.name}}</p>
+      </ion-item>
+    </ion-list>
+    <button ion-button full clear class="cancel" (click)="dismiss()">Cancel</button>
+  </div>
+</ion-content>

@@ -1,0 +1,60 @@
+page-signup {
+
+  .toolbar{
+    height: 100px;
+    .toolbar-background{
+      background-color: #0093ca;
+    }
+    .back-button{
+      color: #fff;
+      margin-top: 20px;
+    }
+    .title{
+      padding:20px;
+      margin-top: 10px;
+
+      .toolbar-title{
+        text-align: right;
+        color: #fff;
+        font-size: 30px;
+        font-weight: 300;
+      }
+    }
+    .title-ios{
+      margin-top: 30px;
+    }
+  }
+
+  .title{
+    font-size: 17px !important;
+  }
+  .form{
+    margin-bottom: 20px;
+    .mail{
+      font-size: 6vw;
+    }
+    .check{
+      position: absolute;
+      float: right;
+      right: 0;
+      margin-top: 45px;
+      font-size: 25px;
+      color: #4fff2f;
+    }
+  }
+.ios .nav{
+      position: absolute;
+      bottom: 0px;
+      font-size: 17px;
+      color: #959595;
+    }
+
+.md .nav{
+      margin-top: 40px;
+      font-size: 17px;
+      color: #959595;
+    }
+
+
+
+}

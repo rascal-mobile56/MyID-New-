@@ -1,0 +1,113 @@
+
+
+<ion-content class="carousel">
+  <div class="navigation">
+    <img src="assets/image/main_logo.png" alt="" class="logo">
+
+    <div style="background-color: white ; height: 100%" >
+    	<div class="myCarousel">
+    	    <div style="background-color :crimson">
+    			<div>
+    			    <img style="width: 50vw ; height: auto ; display: block; margin: auto; " src="assets/image/1.png">
+    			</div>
+    			<div style="text-align: center ">Step 1</div>
+    		</div>
+    		<div style="background-color :crimson">
+    			<div>
+    			    <img style="width: 50vw ; height: auto ; display: block; margin: auto; " src="assets/image/2.png">
+    			</div>
+    			<div style="text-align: center ">Step 2</div>
+    		</div>
+    		<div style="background-color :crimson">
+    			<div>
+    			    <img style="width: 50vw ; height: auto ; display: block; margin: auto; " src="assets/image/3.png">
+    			</div>
+    			<div style="text-align: center ">Step 3</div>
+    		</div>
+    		<div style="background-color :crimson">
+    			<div>
+    			    <img style="width: 50vw ; height: auto ; display: block; margin: auto; " src="assets/image/4.png">
+    			</div>
+    			<div style="text-align: center ">Step 4</div>
+    		</div>
+    	</div>
+    </div>
+  </div>
+
+  <ion-segment [(ngModel)]="relationship" color="primary">
+    <ion-segment-button value="edit">
+      Edit
+    </ion-segment-button>
+    <ion-segment-button value="document">
+      Document
+    </ion-segment-button>
+    <ion-segment-button value="share">
+      Share
+    </ion-segment-button>
+  </ion-segment>
+
+  <div padding *ngIf="relationship=='edit'">
+    <button ion-button full outline color="secondary" class="add-category" (click)="addCategoryPage()"><ion-icon name="add"></ion-icon>Add a new category</button>
+    <ion-list style="margin-top: 20px;">
+        <ion-item class="list-item" *ngFor="let item of items;" (click)="onItemClick($event, item.page)">
+          <img src="assets/icon/{{item.icon}}.png" item-start class="start_icon">
+            {{item.name}}
+          <ion-icon name="arrow-forward" item-end class="second_icon"></ion-icon>
+        </ion-item>
+    </ion-list>
+
+    <ion-list style="margin-top: 30px;">
+      <ion-item class="list-item">
+        <img src="assets/icon/settings_icon.png" item-start class="start_icon">
+          Manage Linked Products
+        <ion-icon name="arrow-forward" item-end class="second_icon"></ion-icon>
+      </ion-item>
+    </ion-list>
+
+  </div>
+
+  <div class="" *ngIf="relationship=='document'">
+
+  </div>
+
+  <div class="share" *ngIf="relationship=='share'">
+    <ion-list class="input_box">
+
+      <ion-item class="item_block">
+        <ion-label stacked class="title">Email your profile to:</ion-label>
+        <ion-input type="email" placeholder="sample@example.com"></ion-input>
+      </ion-item>
+
+      <ion-item >
+        <ion-label stacked>Message (optional):</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-item >
+        <ion-label stacked>Set Password (optional):</ion-label>
+        <ion-input type="text" placeholder="optional"></ion-input>
+      </ion-item>
+
+      <ion-item >
+        <ion-label stacked>Saet Expiration</ion-label>
+        <ion-input type="text" placeholder="Never"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <button ion-button block large color="secondary" class="send"><img src="assets/icon/send.png">Send</button>
+      </ion-item>
+    </ion-list>
+
+    <ion-list style="margin-top: 30px;">
+
+      <ion-item class="list-item">
+        <img src="assets/icon/share-2.png" item-start class="start_icon" style="margin-left: 16px;">
+          Manage Sharing
+        <ion-icon name="arrow-forward" item-end class="second_icon"></ion-icon>
+      </ion-item>
+
+    </ion-list>
+
+  </div>
+
+</ion-content>

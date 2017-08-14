@@ -1,0 +1,85 @@
+page-profile {
+  .navigation{
+    height: 250px;
+    background-color: #0093ca;
+    .logo{
+      width: 25vw;
+      margin: 0 auto;
+      display: block;
+      padding-top: 20px;
+    }
+  }
+  .item-block:first-child
+  {
+      border-top: 0.55px solid #c8c7cc !important;
+  }
+  .add-category{
+    margin-top: 30px;
+    font-size: 20px;
+    .icon{
+      font-size: 30px;
+      font-size: 30px;
+      margin-right: 20px;
+    }
+  }
+  .list-item{
+    height: 60px;
+    padding-left: 0px;
+    .start_icon{
+      width: 30px;
+    }
+    .second_icon{
+      color: #0093ca;
+    }
+    .label{
+      font-size: 20px;
+    }
+  }
+  .segment{
+
+    .segment-button{
+
+    }
+    .segment-button{
+      font-size: 18px;
+      border: none;
+      color: #444444;
+      border-bottom: 3px solid #e4e4e4;
+      border-radius: 0px !important;
+   }
+    .segment-button.segment-activated{
+     color: #0093ca;
+     background-color: #fff;
+     border-bottom: 3px solid #0093ca;
+   }
+  }
+
+  .share{
+
+    .input_box{
+      margin-top: 10px;
+      .item-block{
+        margin-top: 10px;
+      }
+
+      .label{
+        font-size: 17px;
+      }
+      .send{
+        font-size: 22px;
+        height: 55px;
+        img{
+          width: 30px;
+          margin-right: 15px;
+        }
+      }
+    }
+
+
+
+  }
+
+
+
+
+}

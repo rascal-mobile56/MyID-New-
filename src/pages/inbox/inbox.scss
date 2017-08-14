@@ -1,0 +1,35 @@
+page-inbox {
+  .toolbar{
+    height: 100px;
+    .toolbar-background{
+      background-color: #0093ca;
+    }
+    .title{
+      padding:20px;
+      margin-top: 10px;
+
+      .toolbar-title{
+        color: #fff;
+        font-size: 35px;
+        font-weight: 500;
+      }
+    }
+  }
+  .item-block{
+    padding: 0;
+    border: 0.55px solid #c8c7cc !important;
+    padding: 0 10px;
+    border-radius: 5px;
+
+  }
+  .item-block:first-child
+  {
+      border-top: 0.55px solid #c8c7cc !important;
+  }
+  .item_list{
+    margin-bottom: 15px;
+  }
+  .bg-img{
+    margin: 8px 0 !important;
+  }
+}
