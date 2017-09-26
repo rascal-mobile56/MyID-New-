@@ -1,9 +1,80 @@
 .bg-clr{
-    background-color: #0093ca;
+    background-color: #009fcb;
 }
 h1, h2, h3, h4, h5, h6, p{
   color: #424242;
 }
 .item-block:first-child{
   border-top: none !important;
+}
+// .title-img .action-sheet-destructive{ // if you want the image on the left of the title
+//   background:url('../assets/icon/gray/eye.png') no-repeat;
+//   height: 50px;
+//   width: 50px;
+// }
+// .action-sheet-ios .action-sheet-button{
+//   color: #585858;
+// }
+.action-sheet-ios .action-sheet-destructive{
+  color: #f53d3d;
+}
+
+.ion-alpha-sidebar{
+  top: 270px !important;
+  width: 30px;
+  padding-left: 10px;
+}
+.title-img{
+   .action-sheet-title {
+     // if you want the image on the left of the title
+  // background:url('path-to-image-here') no-repeat;
+    height: 50px;
+    border: none;
+    font-size: 17px;
+    color: #353535;
+    line-height: 0px;
+  }
+  .action-sheet-sub-title{
+    border-bottom: 1px solid gray;
+    margin-top: -21px;
+    padding-bottom: 10px
+
+  }
+}
+.alert-position{
+ padding-top: 35vh !important;
+}
+
+ion-passcode.blue .ion-passcode-container {
+  background: linear-gradient(to bottom right, #347eff 0%, #1ea3ff 85%) !important;
+}
+
+
+ion-passcode.passcode-example {
+  img.logo {
+    width: 100px;
+  }
+  p{
+    color: #fff;
+  }
+  .passcode-indicator {
+    margin-top: 1.5rem !important;
+  }
+}
+.transparent-header {
+  .toolbar {
+    .toolbar-background {
+      background: transparent;
+    }
+  }
+}
+.no-margin-top .scroll-content {
+  margin-top: 0 !important;
+}
+
+
+ion-item-divider p {
+  overflow: initial !important;
+  text-overflow: initial !important;
+  white-space: initial !important;
 }

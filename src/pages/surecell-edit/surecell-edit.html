@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar hideBackButton="true" [ngClass]="{'toolbar1':edit, 'toolbar2': save}">
+    <button ion-button clear item-end class="back_btn" left (click)="dismiss()">Cancel</button>
+    <ion-title class="title">
+      SureCell
+    </ion-title>
+    <button *ngIf="save" ion-button clear item-end class="back_btn create" style="right: 0px;" (click)="createSureCellData()"><ion-icon name="md-checkmark"></ion-icon>Save</button>
+    <button *ngIf="!save" ion-button clear item-end class="back_btn create" style="right: 0px;" (click)="updateSureCellData()"><ion-icon name="md-checkmark"></ion-icon>Save</button>
+    <div class="header-title">
+        <img src="assets/icon/white/atom.png" alt="">
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="portfolio">
+
+    <ion-list class="data">
+
+      <ion-item>
+        <ion-label>Provider Name</ion-label>
+        <ion-input type="text" placeholder="Provider Name" [(ngModel)]="surecellData.name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Provider Phone Number</ion-label>
+        <ion-input type="number" placeholder="Provider Phone Number" [(ngModel)]="surecellData.phonenumber"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Policy Number</ion-label>
+        <ion-input type="number" placeholder="Policy Number" [(ngModel)]="surecellData.pllicy_number"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Treating Physician</ion-label>
+        <ion-select [(ngModel)]="surecellData.is_private">
+          <ion-option value="" selected>Select</ion-option>
+          <ion-option *ngFor="let item of state" [value]="item.value_string">{{item.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Notes</ion-label>
+        <ion-textarea type="text" placeholder="Enter Notes" [(ngModel)]="surecellData.notes"></ion-textarea>
+      </ion-item>
+
+    </ion-list>
+
+    <button *ngIf="!save" ion-button color="light" outline full large style="color: red" (click)="deleteAlert()">Delete Allergy</button>
+
+</ion-content>

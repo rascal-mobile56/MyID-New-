@@ -1,20 +1,105 @@
 page-profile {
-  .navigation{
-    height: 250px;
-    background-color: #0093ca;
-    .logo{
-      width: 25vw;
-      margin: 0 auto;
-      display: block;
-      padding-top: 20px;
+
+  .toolbar{
+    height: 190px;
+    .toolbar-background{
+      background-color: #009fcb;
     }
+    .title{
+      height: 50px;
+      .logo{
+        width: 25vw;
+        margin: 0 auto;
+        display: block;
+      }
+      .sheet{
+        position: absolute;
+        top: 10px;
+        right: 0px;
+        background-color: transparent;
+        font-size: 25px;
+        width: 50px;
+        height: 20px;
+      }
+    }
+
+    .slide-box{
+      height: 140px;
+      position: relative;
+      // swiper customize css
+      .swiper-container {
+        width: 100%;
+        height: 120px;
+        margin: 20px auto;
+      }
+      .swiper-slide {
+          text-align: center;
+          font-size: 18px;
+          background: transparent;
+          width: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          opacity: 0.35;
+
+          img{
+                width: 90px;
+                height: 90px;
+                position: absolute;
+                border-radius: 50%;
+                border: 4px solid #fff;
+                top: 0;
+              }
+              p{
+                position: absolute;
+                bottom: 0;
+                margin: 0px auto;
+                color: #fff;
+              }
+      }
+      .swiper-slide-active{
+        opacity: 1;
+      }
+      .swiper-scrollbar{
+        opacity: 0 !important;
+      }
+
+
+    }
+
   }
+
+  .segment{
+    top: 190px;
+    position: fixed;
+    z-index: 200;
+    height: 40px;
+    background-color: #fff;
+
+    .segment-button{
+      height: 100%;
+      font-size: 18px;
+      border: none;
+      color: #444444;
+      line-height: 40px;
+      border-bottom: 3px solid #e4e4e4;
+      border-radius: 0px !important;
+   }
+    .segment-button.segment-activated{
+     color: #0093ca;
+     height: 100%;
+     background-color: #fff;
+     border-bottom: 3px solid #0093ca;
+   }
+  }
+
+
   .item-block:first-child
   {
       border-top: 0.55px solid #c8c7cc !important;
   }
   .add-category{
-    margin-top: 30px;
+    margin-top: 58px;
     font-size: 20px;
     .icon{
       font-size: 30px;
@@ -27,6 +112,7 @@ page-profile {
     padding-left: 0px;
     .start_icon{
       width: 30px;
+      margin-left: 8px;
     }
     .second_icon{
       color: #0093ca;
@@ -35,27 +121,78 @@ page-profile {
       font-size: 20px;
     }
   }
-  .segment{
 
-    .segment-button{
-
+  .document{
+    width: 100%;
+    margin: 0 auto;
+    img{
+      height: 140px;
+     width: 100%;
+     margin-top: 60px;
     }
-    .segment-button{
-      font-size: 18px;
-      border: none;
-      color: #444444;
-      border-bottom: 3px solid #e4e4e4;
-      border-radius: 0px !important;
-   }
-    .segment-button.segment-activated{
-     color: #0093ca;
-     background-color: #fff;
-     border-bottom: 3px solid #0093ca;
-   }
+    h2{
+      text-align: center;
+    }
+    p{
+      text-align: center;
+      font-size: 16px;
+      color: gray;
+    }
+    .premium{
+
+      .filter-box{
+        position: relative;
+        overflow: overlay;
+
+        .search-bar{
+          margin-top: 40px;
+          background-color: #fff;
+          width: calc(100% - 100px);
+          float: left;
+          .searchbar-input{
+            background-color: lightgray;
+          }
+        }
+        button{
+          float: left;
+          z-index: 99;
+          position: absolute;
+          bottom: 3px;
+          height: 30px;
+          width: 90px;
+        }
+
+
+      }
+      .item-div {
+        margin-left: 5px;
+        display: flex;
+        vertical-align: middle;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .no_premium{
+      width: 60%;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .delete-btn{
+      width: 60px;
+      height: 60px;
+      font-size: 5vw;
+      border-radius: 50%;
+      position: fixed;
+      z-index: 100;
+      top: calc(100vh - 127px);
+      right: 10px;
+    }
   }
 
   .share{
-
+    margin-top: 45px;
     .input_box{
       margin-top: 10px;
       .item-block{
@@ -74,12 +211,6 @@ page-profile {
         }
       }
     }
-
-
-
   }
-
-
-
 
 }

@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-navbar hideBackButton="true" [ngClass]="{'toolbar1':edit, 'toolbar2': save}">
+    <button ion-button clear item-end class="back_btn" left (click)="dismiss()">Cancel</button>
+    <ion-title class="title">
+      Pharmacies
+    </ion-title>
+    <button *ngIf="save" ion-button clear item-end class="back_btn create" style="right: 0px;" (click)="createPharmaciesData()"><ion-icon name="md-checkmark"></ion-icon>Save</button>
+    <button *ngIf="!save" ion-button clear item-end class="back_btn create" style="right: 0px;" (click)="updatePharmaciesData()"><ion-icon name="md-checkmark"></ion-icon>Save</button>
+    <div class="header-title">
+        <img src="assets/icon/white/medical-kit.png" alt="">
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="portfolio">
+
+    <ion-list class="data">
+
+      <ion-item>
+        <ion-label>Name</ion-label>
+        <ion-input type="text" placeholder="Name" [(ngModel)]="pharmaciesData.name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Name</ion-label>
+        <ion-input type="phone" placeholder="Phone" [(ngModel)]="pharmaciesData.phone"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Address Line 1</ion-label>
+        <ion-input type="text" placeholder="Address Line 1" [(ngModel)]="pharmaciesData.address1"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Address Line 2</ion-label>
+        <ion-input type="text" placeholder="Address Line 2" [(ngModel)]="pharmaciesData.address2"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>City</ion-label>
+        <ion-input type="text" placeholder="City" [(ngModel)]="pharmaciesData.city"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>State</ion-label>
+        <ion-input type="text" placeholder="State" [(ngModel)]="pharmaciesData.state"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>ZIP</ion-label>
+        <ion-input type="number" placeholder="ZIP" [(ngModel)]="pharmaciesData.zip"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Treating Physician</ion-label>
+        <ion-select [(ngModel)]="pharmaciesData.is_private">
+          <ion-option value="" selected>Select</ion-option>
+          <ion-option *ngFor="let item of state" [value]="item.value_string">{{item.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+    </ion-list>
+
+    <button *ngIf="!save" ion-button color="light" outline full large style="color: red" (click)="deleteAlert()">Delete Allergy</button>
+
+</ion-content>

@@ -1,0 +1,15 @@
+<div class="success" style="background-color: #32db63" *ngIf="this.page == 'likeEdit'">
+  <div class="check">
+    <img src="assets/icon/white/check.png" alt="">
+    <h1 style="color: #fff">Product Successfully <br>Linked!</h1>
+    <button ion-button color="secondary" outline large (click)="dismiss()" class="product">Done</button>
+  </div>
+</div>
+
+<div class="success" style="background-color: #fff" *ngIf="this.page == 'document'">
+  <div class="silde-check">
+    <img src="assets/icon/blue/circle-check.png" alt="">
+    <h1 >Thank you for your<br>purchase!</h1>
+    <button ion-button color="secondary" outline large full (click)="dismiss()" class="purchase">Done</button>
+  </div>
+</div>

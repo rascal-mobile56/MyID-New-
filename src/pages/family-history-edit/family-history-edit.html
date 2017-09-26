@@ -1,0 +1,65 @@
+
+<ion-header>
+  <ion-navbar hideBackButton="true" [ngClass]="{'toolbar1':edit, 'toolbar2': save}">
+    <button ion-button clear item-end class="back_btn" left (click)="dismiss()">Cancel</button>
+    <ion-title class="title">
+      Family History
+    </ion-title>
+    <button *ngIf="save" ion-button clear item-end class="back_btn create" style="right: 0px;" (click)="createFamilyHistoryData()"><ion-icon name="md-checkmark"></ion-icon>Save</button>
+    <button *ngIf="!save" ion-button clear item-end class="back_btn create" style="right: 0px;" (click)="updateFamilyHistoryData()"><ion-icon name="md-checkmark"></ion-icon>Save</button>
+    <div class="header-title">
+        <img src="assets/icon/white/family.png" alt="">
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="portfolio">
+
+    <ion-list class="data">
+
+      <ion-item>
+        <ion-label>Name</ion-label>
+        <ion-input type="text" placeholder="Name" [(ngModel)]="familyHistoryData.name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Relationship</ion-label>
+        <ion-select [(ngModel)]="familyHistoryData.value">
+          <ion-option value="" selected>Select</ion-option>
+          <ion-option *ngFor="let item of relationship" [value]="item.value">{{item.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Birthdate</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" pickerFormat="MMM/DD/YYYY" [(ngModel)]="familyHistoryData.birth_date"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Deceased or Living</ion-label>
+        <ion-select [(ngModel)]="familyHistoryData.value">
+          <ion-option value="" selected>Select</ion-option>
+          <ion-option *ngFor="let item of state" [value]="item.value_string">{{item.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item ng-show="familyHistoryData.value">
+        <ion-label>Year of Death</ion-label>
+        <ion-datetime displayFormat="YYYY" pickerFormat="YYYY" [(ngModel)]="familyHistoryData.Death_date"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label> Medical Condition</ion-label>
+        <ion-textarea type="text" placeholder="Medical Condition" [(ngModel)]="familyHistoryData.condition"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Notes</ion-label>
+        <ion-textarea type="text" placeholder="Enter Notes" [(ngModel)]="familyHistoryData.notes"></ion-textarea>
+      </ion-item>
+
+    </ion-list>
+
+    <button *ngIf="!save" ion-button color="light" outline full large style="color: red" (click)="deleteAlert()">Delete Allergy</button>
+
+</ion-content>

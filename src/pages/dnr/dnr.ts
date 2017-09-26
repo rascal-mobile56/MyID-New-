@@ -10,5 +10,7 @@ export class DNRPage {
   constructor(public navCtrl: NavController) {
 
   }
-
+  closePage(){
+    this.navCtrl.pop();
+  }
 }

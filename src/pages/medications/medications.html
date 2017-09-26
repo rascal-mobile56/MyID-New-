@@ -1,11 +1,45 @@
+
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Medications
+  <ion-navbar hideBackButton="true">
+    <button ion-button clear item-end class="back_btn" left (click)="closePage()"><ion-icon name="arrow-back"></ion-icon>Back</button>
+    <ion-title class="title">
+      <img src="assets/image/main_logo.png" alt="" class="logo">
     </ion-title>
+    <button ion-button clear item-end class="back_btn create" style="right: 0px;" (click)="createMedicationsData()"><ion-icon name="md-add"></ion-icon></button>
+    <div class="header-title">
+      <div class="profile_img">
+        <img src="assets/image/1.png" alt="">
+        <p class="name">Michael</p>
+      </div>
+      <p class="view_title">Medications</p>
+    </div>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+
+  <ion-list *ngIf="loaded">
+
+    <ion-item class="reminder-item" *ngFor="let item of reminderData" (click)="editMedicationsData($event, item)">
+      <ion-avatar item-start>
+
+        <div class="m-icon m-icon-pill" *ngIf="item.form.name == 'Pill'">
+          <div class="icon-left" [ngStyle]="{'-webkit-mask-image': 'url(assets/' + item.form.file + ')', 'background-color': item.color1.color}"></div>
+          <div class="icon-right" [ngStyle]="{'-webkit-mask-image': 'url(assets/' + item.form.file + ')', 'background-color': item.color2.color}"></div>
+        </div>
+        <div class="m-icon" *ngIf="item.form.name !== 'Pill'">
+          <div class="m-icon-normal" [ngStyle]="{'-webkit-mask-box-image': 'url(assets/' + item.form.file + ')', 'background-color': item.color1.color}"></div>
+        </div>
+
+      </ion-avatar>
+      <p class="tablet-name">{{item.name}}</p>
+      <p class="tablet-remain">{{item.quantity}} Remanining</p>
+      <div item-end="" class="tablet-note">
+        <div class="note-button">
+          <img src="assets/icon/continued-circles-vertical.png">
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

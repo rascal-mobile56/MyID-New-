@@ -7,9 +7,9 @@
   <div class="modal_content">
     <div class="title">Select category to add</div>
     <ion-list>
-      <ion-item class="category" *ngFor="let item of categories">
-        <img src="assets/icon/{{item.icon}}.png" alt="">
-        <p>{{item.name}}</p>
+      <ion-item class="category" *ngFor="let item of categories" (click)="onClickCategory(item)" [ngClass]="{'item-disable':!item.show}">
+        <img src="assets/icon/gray/{{item.icon}}.png" alt="">
+        <p>{{item.name}}<sup>{{item.sup}}</sup></p>
       </ion-item>
     </ion-list>
     <button ion-button full clear class="cancel" (click)="dismiss()">Cancel</button>

@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-navbar hideBackButton="true" [ngClass]="{'toolbar1':edit, 'toolbar2': save}">
+    <button ion-button clear item-end class="back_btn" left (click)="dismiss()">Cancel</button>
+    <ion-title class="title">
+      Physicians
+    </ion-title>
+    <button *ngIf="save" ion-button clear item-end class="back_btn create" style="right: 0px;" (click)="createPhysiciansData()"><ion-icon name="md-checkmark"></ion-icon>Save</button>
+    <button *ngIf="!save" ion-button clear item-end class="back_btn create" style="right: 0px;" (click)="updatePhysiciansData()"><ion-icon name="md-checkmark"></ion-icon>Save</button>
+    <div class="header-title">
+        <img src="assets/icon/white/doctor.png" alt="">
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="portfolio">
+
+    <ion-list class="data">
+
+      <ion-item>
+        <ion-label>Name</ion-label>
+        <ion-input type="text" placeholder="Name of Physician" [(ngModel)]="physicianData.name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Business</ion-label>
+        <ion-input type="text" placeholder="Enter Business" [(ngModel)]="physicianData.business_name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Title</ion-label>
+        <ion-input type="text" placeholder="Enter Title" [(ngModel)]="physicianData.title"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Address</ion-label>
+        <ion-input type="text" placeholder="Enter Address" [(ngModel)]="physicianData.address"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>City</ion-label>
+        <ion-input type="text" placeholder="Enter City" [(ngModel)]="physicianData.city"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>State</ion-label>
+        <ion-input type="text" placeholder="Enter State" [(ngModel)]="physicianData.state"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Country</ion-label>
+        <ion-input type="text" placeholder="Enter Country" [(ngModel)]="physicianData.country"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Phone</ion-label>
+        <ion-input type="tel" placeholder="Enter Phone number" [(ngModel)]="physicianData.phone_number"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>ZipCode</ion-label>
+        <ion-input type="number" placeholder="Enter ZipCode" [(ngModel)]="physicianData.zip_code"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Treating Physician</ion-label>
+        <ion-select [(ngModel)]="physicianData.is_private">
+          <ion-option value="" selected>Select</ion-option>
+          <ion-option *ngFor="let item of state" [value]="item.value_string">{{item.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+
+
+    </ion-list>
+
+    <button *ngIf="!save" ion-button color="light" outline full large style="color: red" (click)="deleteAlert()">Delete Physician</button>
+
+</ion-content>

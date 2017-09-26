@@ -1,0 +1,91 @@
+page-add-dependent {
+
+    .toolbar-background{
+      background-color: #32db64;
+      border-color: transparent !important;
+    }
+    .toolbar-content{
+      .title{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 50px;
+        text-align: center;
+      }
+      .back_btn{
+        position: absolute;
+        top: 0;
+        color: white;
+        padding: 5px;
+        font-size: 18px;
+        z-index: 99;
+        .icon{
+          font-size: 30px;
+          margin-right: 5px;
+        }
+      }
+      .logo{
+        width: 25vw;
+      }
+    }
+
+    .background{
+      height: 150px;
+      background-color: #32db64;
+    }
+
+    .profile_section{
+      width: 100%;
+      position: absolute;
+      top: 10px;
+
+      .list_view{
+        background-color: #fff;
+        padding-top: 70px;
+        margin-top: -80px;
+      .item-block{
+        height: 55px;
+        background-color: transparent;
+        padding: 0 5px 0 15px;
+        .label{
+          font-size: 17px;
+          color: #2f2f2f;
+          font-weight: 500;
+          font-size: 18px;
+        }
+        .input {
+          input{
+            text-align: right;
+            font-size: 20px;
+            color: #4a4a4a;
+            }
+          }
+        }
+      }
+
+      .clange_photo{
+        height: 32px;
+        width: 25px;
+        border-radius: 50%;
+        position: absolute;
+        top: 135px;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+
+      }
+
+      img{
+        width: 140px;
+        margin: 25px auto;
+        display: block;
+        border: 10px solid #fff;
+        border-radius: 50%;
+        /* margin-top: 103px; */
+        top: 0;
+        bottom: 50px;
+        background-color: #fff;
+      }
+    }
+
+}

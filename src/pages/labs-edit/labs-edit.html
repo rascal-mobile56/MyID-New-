@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar hideBackButton="true" [ngClass]="{'toolbar1':edit, 'toolbar2': save}">
+    <button ion-button clear item-end class="back_btn" left (click)="dismiss()">Cancel</button>
+    <ion-title class="title">
+      Labs
+    </ion-title>
+    <button *ngIf="save" ion-button clear item-end class="back_btn create" style="right: 0px;" (click)="createLabsData()"><ion-icon name="md-checkmark"></ion-icon>Save</button>
+    <button *ngIf="!save" ion-button clear item-end class="back_btn create" style="right: 0px;" (click)="updateLabsData()"><ion-icon name="md-checkmark"></ion-icon>Save</button>
+    <div class="header-title">
+        <img src="assets/icon/white/test-tube.png" alt="">
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="portfolio">
+
+    <ion-list class="data">
+      <ion-item>
+
+        <ion-label>Lab Test Type</ion-label>
+        <ion-select [(ngModel)]="labsData.value">
+          <ion-option value="" selected>Select</ion-option>
+          <ion-option *ngFor="let item of type" [value]="item.value">{{item.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label>Open field</ion-label>
+        <ion-input type="text" placeholder="Open field" [(ngModel)]="labsData.field"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Date of Procedure</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" pickerFormat="MMM/DD/YYYY" [(ngModel)]="labsData.procedure_date"></ion-datetime>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label>Results</ion-label>
+        <ion-textarea type="text" placeholder="Enter Notes" [(ngModel)]="labsData.results"></ion-textarea>
+      </ion-item>
+
+    </ion-list>
+
+    <button *ngIf="!save" ion-button color="light" outline full large style="color: red" (click)="deleteAlert()">Delete Allergy</button>
+
+</ion-content>

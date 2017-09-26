@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <button ion-button clear item-end class="back_btn" left (click)="cancel()"> <ion-icon name="arrow-back"></ion-icon>Back</button>
+    <ion-title class="title">
+      Link New Product
+    </ion-title>
+    <button ion-button clear item-end class="back_btn create" style="right: 0px;"><ion-icon name="md-checkmark"></ion-icon>Save</button>
+    <div class="header-title">
+        <img src="assets/icon/white/add-link.png" alt="">
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="portfolio">
+  <button ion-button color="secondary" outline full large class="scan" (click)="scan()"><ion-icon name="md-qr-scanner"></ion-icon>Scan Product QR Code</button>
+
+  <ion-list>
+
+    <ion-item class="data">
+      <ion-label>ID</ion-label>
+      <ion-input type="password" placeholder="xxxxxxx"></ion-input>
+    </ion-item>
+
+    <ion-item class="data">
+      <ion-label>PIN</ion-label>
+      <ion-input type="password" placeholder="xxxx"></ion-input>
+    </ion-item>
+
+    <ion-item class="data">
+      <ion-label>Label</ion-label>
+      <ion-input type="text" placeholder="e.g. blue Sport, Sliver Pod, etc."></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

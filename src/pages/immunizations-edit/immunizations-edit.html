@@ -1,0 +1,60 @@
+
+  Immunizations - Edit
+
+  <ion-header>
+    <ion-navbar hideBackButton="true" [ngClass]="{'toolbar1':edit, 'toolbar2': save}">
+      <button ion-button clear item-end class="back_btn" left (click)="dismiss()">Cancel</button>
+      <ion-title class="title">
+        Immunizations
+      </ion-title>
+      <button *ngIf="save" ion-button clear item-end class="back_btn create" style="right: 0px;" (click)="createImmunizationsData()"><ion-icon name="md-checkmark"></ion-icon>Save</button>
+      <button *ngIf="!save" ion-button clear item-end class="back_btn create" style="right: 0px;" (click)="updateImmunizationsData()"><ion-icon name="md-checkmark"></ion-icon>Save</button>
+      <div class="header-title">
+          <img src="assets/icon/white/syringe.png" alt="">
+      </div>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content class="portfolio">
+
+      <ion-list class="data">
+
+        <ion-item>
+          <ion-label>Vaccine</ion-label>
+          <ion-select [(ngModel)]="immunizationsData.value">
+            <ion-option value="" selected>Select</ion-option>
+            <ion-option *ngFor="let item of vaccineList" [value]="item.value">{{item.name}}</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>Notes</ion-label>
+          <ion-textarea type="text" placeholder="Enter Notes" [(ngModel)]="immunizationsData.notes"></ion-textarea>
+        </ion-item>
+      </ion-list>
+
+        <button ion-button icon-right clear class="add-dose" (click)="addDose()">
+          Add Dose
+          <ion-icon name="ios-add-circle-outline"></ion-icon>
+        </button>
+
+        <ion-list class="data" >
+          <ion-item *ngFor="let item of array_item">
+            <ion-label>{{item.title}}</ion-label>
+            <ion-input type="text" placeholder="{{item.does_name}}" [(ngModel)]="item.dose_name"></ion-input>
+          </ion-item>
+        </ion-list>
+
+        <ion-list class="data">
+          <ion-item>
+            <ion-label>Doctor</ion-label>
+            <ion-select [(ngModel)]="immunizationsData.id">
+              <ion-option value="" selected>Select</ion-option>
+              <ion-option *ngFor="let item of physicianData" [value]="item.id">{{item.business_name}}</ion-option>
+            </ion-select>
+          </ion-item>
+
+      </ion-list>
+
+      <button *ngIf="!save" ion-button color="light" outline full large style="color: red" (click)="deleteAlert()">Delete Allergy</button>
+
+  </ion-content>

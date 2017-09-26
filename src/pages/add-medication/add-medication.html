@@ -1,0 +1,131 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start class="cancel">
+      <button (click)="onCancel()">Cancel</button>
+    </ion-buttons>
+    <p class="spec-title">Medication</p>
+
+    <div class="tablet-cover" *ngIf="loaded">
+      <div class="m-icon m-icon-pill" *ngIf="form.name == 'Pill'">
+        <div class="icon-left"
+        [ngStyle]="{'-webkit-mask-image': 'url(assets/' + form.file + ')', 'background-color': color1.color}"
+        ></div>
+        <div class="icon-right"
+        [ngStyle]="{'-webkit-mask-image': 'url(assets/' + form.file + ')', 'background-color': color2.color}"
+        ></div>
+      </div>
+      <div class="m-icon" *ngIf="form.name !== 'Pill'">
+        <div class="m-icon-normal"
+        [ngStyle]="{'-webkit-mask-box-image': 'url(assets/' + form.file + ')', 'background-color': color1.color}"
+        ></div>
+      </div>
+    </div>
+
+    <ion-buttons end class="save">
+      <button (click)="onSave()"><ion-icon name="md-checkmark"></ion-icon>&nbsp;Save</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content *ngIf="loaded">
+  <ion-item [ngClass]="{invalid: !medicationData.name}">
+    <ion-label>Name</ion-label>
+    <ion-input type="text" placeholder="Name of Medicine" [(ngModel)]="medicationData.name"></ion-input>
+  </ion-item>
+
+  <ion-item (click)="selectForm()">
+    <div class="" item-start>Form</div>
+    <div class="option-val" item-end>{{form.name}}</div>
+  </ion-item>
+
+  <!-- Form selection region -->
+
+  <div class="form-rgn" *ngIf="selecting.form">
+    <div class="form-item" *ngFor="let form of default_forms" (click)="setForm(form)">
+      <div class="form-img"
+      [ngStyle]="{'-webkit-mask-image': 'url(assets/' + form.file + ')'}">
+      </div>
+      <div class="form-name">{{form.name}}</div>
+    </div>
+  </div>
+
+  <!------------------------->
+
+  <ion-item (click)="selectColor1()">
+    <div class="" item-start>
+      <span *ngIf="form.name !== 'Pill'">Color</span>
+      <span *ngIf="form.name == 'Pill'">Left Color</span>
+    </div>
+    <div class="option-val" item-end>{{color1.name}}</div>
+  </ion-item>
+
+  <!-- Color1 selection region -->
+
+  <div class="color-rgn" *ngIf="selecting.color1">
+    <div class="color-item" *ngFor="let color of default_colors" (click)="setColor1(color)">
+      <div class="color-img"
+        [ngStyle]="{'background-color': color.color }">
+      </div>
+      <div class="color-name">{{color.name}}</div>
+    </div>
+  </div>
+
+  <!------------------------->
+
+  <ion-item (click)="selectColor2()" *ngIf="form.name == 'Pill'">
+    <div class="" item-start>Right Color</div>
+    <div class="option-val" item-end>{{color2.name}}</div>
+  </ion-item>
+
+  <!-- Color1 selection region -->
+
+  <div class="color-rgn" *ngIf="selecting.color2 && form.name == 'Pill'">
+    <div class="color-item" *ngFor="let color of default_colors" (click)="setColor2(color)">
+      <div class="color-img"
+        [ngStyle]="{'background-color': color.color }">
+      </div>
+      <div class="color-name">{{color.name}}</div>
+    </div>
+  </div>
+
+  <!------------------------->
+
+  <ion-item [ngClass]="{invalid: !medicationData.dose}">
+    <ion-label>Dose</ion-label>
+    <ion-input type="tel" placeholder="Enter Dose" [(ngModel)]="medicationData.dose"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label>Frequency</ion-label>
+      <ion-multi-picker [(ngModel)] = "medicationData.frequency" placeholder="1 times Daily" separator=" times " item-content [multiPickerColumns]="frequencyColumns"></ion-multi-picker>
+  </ion-item>
+
+  <ion-item (click)="enterNote()">
+    <div class="" item-start>Notes</div>
+    <div class="option-val" item-end>
+      <p *ngIf="medicationData.note == ''">Add additional notes</p>
+      <p *ngIf="medicationData.note !== ''">{{medicationData.note}}</p>
+    </div>
+  </ion-item>
+
+  <div class="note-rgn" *ngIf="selecting.note">
+    <textarea name="name" rows="4" placeholder="Please type here ..." [(ngModel)]="note_template"></textarea>
+    <div class="note-buttons">
+      <button ion-button outline small color="light" (click)="noteCancel()">Cancel</button>
+      <button ion-button outline small color="light" (click)="noteSave()">OK</button>
+    </div>
+  </div>
+
+  <div class="space">
+  </div>
+
+  <ion-item>
+    <ion-label>Visible on public profile?</ion-label>
+    <ion-toggle [(ngModel)]="medicationData.visible"></ion-toggle>
+  </ion-item>
+
+  <div class="space">
+    Your Public Profile is what is displayed when a first Responder access your profile.
+  </div>
+
+</ion-content>

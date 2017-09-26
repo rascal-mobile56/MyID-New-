@@ -1,12 +1,130 @@
-<ion-content>
-  <div class="header">
-    <div class="navigation">
-      <button ion-button clear item-end icon-left class="back_btn"><ion-icon name="star"></ion-icon>Back
-      </button>
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <button ion-button clear item-end class="back_btn" left (click)="closePage()"><ion-icon name="arrow-back"></ion-icon>Back</button>
+    <ion-title class="title">
+      <img src="assets/image/main_logo.png" alt="" class="logo">
+    </ion-title>
+    <button ion-button clear item-end class="back_btn" style="right: 0px;" (click)="personalDataUpdate()"><ion-icon name="md-checkmark"></ion-icon>Save</button>
+    <div class="header-title">
+      <div class="profile_img">
+        <img [src]="imagePath"  alt="" onError="this.src='assets/image/default.png';">
+        <p class="name">{{person.last_name}}</p>
+      </div>
+      <p class="view_title">Personal Information</p>
     </div>
-    <p>Personal Information</p>
-    <button ion-button clear item-end icon-right class="back_btn"><ion-icon name="star"></ion-icon>Back
-    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-clr">
+
+  <div class="profile_section">
+    <img [src]="imagePath"  alt="" onError="this.src='assets/image/default.png';">
+    <button ion-button name="button" color="secondary" class="clange_photo" (click)="getPicture()"><ion-icon name="md-add"></ion-icon></button>
+      <ion-list class="list_view">
+
+        <ion-item>
+          <ion-label>First Name</ion-label>
+          <ion-input type="text" [(ngModel)]="person.first_name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Second Name</ion-label>
+          <ion-input type="text" [(ngModel)]="person.middle_name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Last Name</ion-label>
+          <ion-input type="text" [(ngModel)]="person.last_name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Phone Number</ion-label>
+          <ion-input type="tel" [(ngModel)]="person.phone_number"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Birthdate</ion-label>
+          <ion-datetime displayFormat="MM/DD/YYYY" pickerFormat="MMM/DD/YYYY" [(ngModel)]="person.birth_date"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Gender</ion-label>
+          <ion-select [(ngModel)]="person.gender" class="edit-select">
+            <ion-option *ngFor="let gender of genders" [value]="gender.value">{{gender.title}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Hair</ion-label>
+          <ion-select [(ngModel)]="person.hair" class="edit-select">
+            <ion-option *ngFor="let hair of hairs" [value]="hair.value">{{hair.color}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Eye Color</ion-label>
+          <ion-select [(ngModel)]="person.eye_color" class="edit-select">
+            <ion-option *ngFor="let eye of eyes" [value]="eye.value">{{eye.color}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Height</ion-label>
+          <ion-input type="text" [(ngModel)]="person.height"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Weight</ion-label>
+          <ion-input type="text" [(ngModel)]="person.weight"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Blood Type</ion-label>
+          <ion-select [(ngModel)]="person.blood_type" class="edit-select" >
+            <ion-option *ngFor="let blood of bloods" [value]="blood.value">{{blood.type}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Organ Donor</ion-label>
+          <ion-select [(ngModel)]="person.donor" class="edit-select">
+            <ion-option *ngFor="let donor of donors" [value]="donor.value">{{donor.title}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Address Line 1</ion-label>
+          <ion-input type="text" [(ngModel)]="address.line1"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Address Line 2</ion-label>
+          <ion-input type="text" [(ngModel)]="address.line2"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>City</ion-label>
+          <ion-input type="text" [(ngModel)]="address.city"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>State/Province</ion-label>
+          <ion-input type="text" [(ngModel)]="address.state"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Zip</ion-label>
+          <ion-input type="text" [(ngModel)]="address.zip"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Country</ion-label>
+          <ion-input style="text-transform:uppercase" type="text" [(ngModel)]="address.country"></ion-input>
+        </ion-item>
+
+      </ion-list>
+
   </div>
+
 
 </ion-content>

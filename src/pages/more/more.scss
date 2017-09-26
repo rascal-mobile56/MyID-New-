@@ -17,6 +17,10 @@ page-more {
     }
   }
 
+  .bg-clr{
+      background-color: #e8e8e8;
+  }
+
   .item-block:first-child
   {
       border-top: 0.55px solid #c8c7cc !important;
@@ -31,6 +35,30 @@ page-more {
     }
     .label{
       font-size: 20px;
+    }
+    .start_icon{
+      width: 30px;
+      margin-left: 8px;
+    }
+  }
+  .setting{
+    background-color: white;
+    border: 1px solid #c8c7cc;
+    .left{
+      position: absolute;
+      left: 16px;
+      font-size: 40px;
+      color: #555658;
+
+    }
+    p{
+      width: calc(100% - 100px);
+      text-align: left;
+      color: #070707;
+    }
+    .right{
+      position: absolute;
+      right: 20px;
     }
   }
 

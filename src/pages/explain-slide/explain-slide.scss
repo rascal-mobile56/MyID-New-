@@ -1,0 +1,40 @@
+page-explain-slide {
+
+  .close{
+    position: absolute;
+    font-size: 30px;
+    color: gray;
+    z-index: 9999;
+  }
+  .slide-box{
+    img{
+      width: 80%;
+      margin: 0 auto;
+      margin-top: -60px;
+    }
+    p{
+      padding: 0 10px;
+    }
+  }
+  .profile{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: -70px;
+    img{
+      width: auto;
+      max-width: 100px;
+      height: auto;
+      max-height: 100px;
+    }
+  }
+  .description{
+    font-size: 10px;
+    position: absolute;
+    bottom: 0;
+    padding: 5px;
+    text-align: left;
+  }
+  .swiper-pagination{
+    bottom: 21vh !important;
+  }
+}

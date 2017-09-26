@@ -1,0 +1,113 @@
+page-medications-edit {
+  .toolbar1{
+    .toolbar-background{
+      background-color:  #0093ca;
+    }
+  }
+  .toolbar2{
+    .toolbar-background{
+      background-color: rgb(0, 213, 156);
+    }
+  }
+
+  .toolbar{
+    height: 140px;
+
+    .toolbar-content{
+      .title{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 50px;
+        text-align: center;
+      }
+      .back_btn{
+        position: absolute;
+        top: 0;
+        color: white;
+        padding: 0px;
+        .icon{
+          font-size: 30px;
+          margin-right: 5px;
+        }
+      }
+      .logo{
+        width: 25vw;
+      }
+
+      .header-title{
+        margin-top: 40px;
+          img{
+            width: 15vw;
+            margin: 0 auto;
+            display: block;
+          }
+        }
+    }
+  }
+  .bg-clr{
+      background-color: rgb(227, 233, 235);
+  }
+  .data{
+    background-color: rgb(227, 233, 235);
+    .item-block{
+      height: 55px;
+      .label{
+        color: #404040;
+      }
+      input{
+        text-align: right;
+        font-size: 20px;
+      }
+    }
+  }
+  .feature{
+    .edit{
+      height: 50px;
+      background-color: #fff;
+      font-size: 20px;
+    }
+    .delete{
+      color: red;
+      background-color: #fff;
+      border-color: lightgray;
+      margin-bottom: 30px;
+
+    }
+    p{
+      padding: 0 20px;
+      color: gray;
+    }
+  }
+
+  .reminder-item {
+    padding: 12px 2px 12px 12px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14);
+    margin-bottom: 12px;
+    ion-avatar {
+      img {
+        border-radius: 0 !important;
+      }
+    }
+    .tablet-name {
+      color: black;
+      font-size: 22px;
+    }
+    .tablet-remain {
+      font-size: 18px;
+    }
+    .tablet-note {
+      margin: 0;
+      .note-button {
+        height: 56px;
+        padding: 4px;
+        text-align: right;
+        img {
+          height: 28px;
+        }
+      }
+    }
+  }
+
+
+}

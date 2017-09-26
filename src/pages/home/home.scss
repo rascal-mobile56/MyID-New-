@@ -16,16 +16,11 @@ page-home {
     border-radius: 5px;
     position: relative;
     .icon{
-      width: 11vw;
+      width: 7px;
       max-width: 70px;
       position: absolute;
       right: 20px;
-      top: 15px;
-    }
-    .noti{
-      width: 19px;
-      right: 30px;
-      top: 7px;
+      top: 20px;
     }
     button{
       font-size: 16px;
@@ -57,8 +52,8 @@ page-home {
     float: left;
     .notification{
       position: absolute;
-      top: 5px;
-      right: 32px;
+      top: 0px;
+      right: 8vw;
       img{
         width: 25px;
         height: 25px;
@@ -73,10 +68,17 @@ page-home {
     }
     img{
       display: block;
-      width: 125px;
-      height: 115px;
+      width: 100px;
       margin: 0 auto;
     }
+    .middle-name{
+      position: absolute;
+      top: 5px;
+      left: 15vw;
+      color: #fff;
+      font-weight: 100;
+      font-size: 30px;
+      }
     p{
       text-align: center;
     }

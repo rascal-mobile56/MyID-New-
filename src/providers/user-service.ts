@@ -64,7 +64,16 @@ export class UserService {
       .map((res:Response) => res.json())
       .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
+  getPersonalProfiles(auth_token, email, profile_id){
+    let headers = new Headers({'Content-Type': 'application/json', 'auth_token': auth_token, 'email': email});
+    console.log(JSON.stringify(headers)+"headers");
+    console.log(auth_token + profile_id);
+    let options = new RequestOptions({headers: headers});
 
+    return this.http.get(this.baseService.getProfilesUrl + "/" + profile_id, options)
+      .map((res:Response)=>res.json())
+      .catch((error:any)=>Observable.throw(error.json().error || 'Server error'));
+  }
 
   getProfiles(email, auth_token){
     let headers = new Headers({'Content-Type': 'application/json', 'auth_token': auth_token, 'email': email});

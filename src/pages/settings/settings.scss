@@ -1,0 +1,62 @@
+page-settings {
+  .toolbar{
+    .toolbar-background{
+      background-color: #0093ca;
+    }
+    .back-button{
+      color: #fff;
+    }
+    .title{
+      .toolbar-title{
+        color: #fff;
+        font-size: 20px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .bg-clr{
+      background-color: #e8e8e8;
+  }
+
+  .item-block:first-child
+  {
+      border-top: 0.55px solid #c8c7cc !important;
+  }
+  .list-item{
+    height: 60px;
+    .start_icon{
+      width: 30px;
+    }
+    .second_icon{
+      color: #0093ca;
+    }
+    .label{
+      font-size: 20px;
+
+      .icon{
+
+      }
+    }
+  }
+
+  .toggle-button{
+      height: 50px;
+      .item-inner{
+          border-bottom: none !important;
+      }
+    .label{
+      font-size: 20px;
+    }
+  }
+  .explain{
+    padding: 5px 10px;
+    font-size: 14px;
+    color: gray;
+  }
+  .sign-out{
+    background-color: white;
+    border: 1px solid #c8c7cc;
+    color: red;
+  }
+}

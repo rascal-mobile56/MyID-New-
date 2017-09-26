@@ -11,4 +11,8 @@ export class LivingWillPage {
 
   }
 
+  closePage(){
+    this.navCtrl.pop();
+  }
+
 }

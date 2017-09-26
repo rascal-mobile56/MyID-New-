@@ -1,8 +1,18 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Labs
+  <ion-navbar hideBackButton="true">
+    <button ion-button clear item-end class="back_btn" left (click)="closePage()"><ion-icon name="arrow-back"></ion-icon>Back</button>
+    <ion-title class="title">
+      <img src="assets/image/main_logo.png" alt="" class="logo">
     </ion-title>
+    <button ion-button clear item-end class="back_btn create" style="right: 0px;" (click)="createLabsData()"><ion-icon name="md-add"></ion-icon></button>
+    <div class="header-title">
+      <div class="profile_img">
+        <img *ngIf="!imagePath" src="assets/icon/gray/user-circle1.png" alt="">
+        <img *ngIf="imagePath" [src]="imagePath" alt="">
+        <p class="name">{{personName}}</p>
+      </div>
+      <p class="view_title">Labs</p>
+    </div>
   </ion-navbar>
 </ion-header>
 

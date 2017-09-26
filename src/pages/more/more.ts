@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { SettingPage } from '../setting/setting';
+import { NavController, ModalController } from 'ionic-angular';
+import { SettingsPage } from '../settings/settings';
+import { AddDependentPage } from '../add-dependent/add-dependent';
+import { ManageSharingPage } from '../manage-sharing/manage-sharing';
+import { LinkNewPage } from '../link-new/link-new';
 
 @Component({
   selector: 'page-more',
@@ -8,16 +11,33 @@ import { SettingPage } from '../setting/setting';
 })
 export class MorePage {
 
-  items: Array<{name:string, icon:string}>;
-  constructor(public navCtrl: NavController) {
-
-    this.items = [{ name: 'Communication', icon:'sharing'}, { name: 'Manage Sharing', icon: 'sharing'},
-                  { name: 'Link a Product', icon:'sharing'}];
+  constructor(
+  public navCtrl: NavController,
+  public modalCtrl: ModalController) {
   }
 
-  goSettingPage(){
-    console.log('go SettingPage');
-    this.navCtrl.push(SettingPage);
+
+  goAddDependentPage(){
+    console.log('go AddDependent Page');
+    let profileModal = this.modalCtrl.create(AddDependentPage);
+    profileModal.present();
+  }
+
+  goManageSharingPage(){
+    console.log('go ManageSharing Page');
+    this.navCtrl.push(ManageSharingPage);
+  }
+
+  goLinkNewPage(){
+    console.log('go LinkNew Page');
+    let profileModal = this.modalCtrl.create(LinkNewPage);
+    profileModal.present();
+  }
+
+
+  goSettingsPage(){
+    console.log('go SettingsPage');
+    this.navCtrl.push(SettingsPage);
   }
 
 }

@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button clear item-end class="back_btn" left (click)="dismiss()">Cancel</button>
+    <ion-title class="title">
+      <img src="assets/image/main_logo.png" alt="" class="logo">
+    </ion-title>
+    <button ion-button clear item-end class="back_btn" style="right: 0px;"><ion-icon name="md-checkmark" (click)="createProfile()"></ion-icon>Save</button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="background"></div>
+  <div class="profile_section">
+    <img *ngIf="!imagePath" src="assets/icon/gray/user-circle1.png" alt="">
+    <img *ngIf="imagePath" [src]="imagePath" alt="">
+    <button ion-button name="button" color="secondary" class="clange_photo" (click)="getPicture()"><ion-icon name="md-add"></ion-icon></button>
+    <ion-list class="list_view">
+
+      <ion-item>
+        <ion-label>First Name</ion-label>
+        <ion-input type="text" [(ngModel)]="profile_info.first_name" placeholder="Enter First Name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Last Name</ion-label>
+        <ion-input type="text" [(ngModel)]="profile_info.last_name" placeholder="Enter Last Name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Gender</ion-label>
+        <ion-select [(ngModel)]="profile_info.gender" class="edit-select">
+          <ion-option *ngFor="let gender of genders" [value]="gender.value" placeholder="Choose Gender">{{gender.title}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Birthday</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" pickerFormat="MMM/DD/YYYY" [(ngModel)]="profile_info.birth_date" placeholder="Enter Birthday"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>City</ion-label>
+        <ion-input type="text" [(ngModel)]="profile_info.city" placeholder="Enter City"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>State/Province</ion-label>
+        <ion-input type="text" [(ngModel)]="profile_info.state" placeholder="State/Province"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Country</ion-label>
+        <ion-input type="text" [(ngModel)]="profile_info.country" placeholder="Country"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>ZipCode</ion-label>
+        <ion-input type="number" [(ngModel)]="profile_info.zip" placeholder="ZipCode"></ion-input>
+      </ion-item>
+
+    </ion-list>
+  </div>
+</ion-content>

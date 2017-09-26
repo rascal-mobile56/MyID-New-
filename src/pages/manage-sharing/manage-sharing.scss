@@ -1,0 +1,139 @@
+page-manage-sharing {
+
+    .nav-bar{
+      width: 100%;
+      height: 100px;
+      position: absolute;
+      background-color: #0093ca;
+      text-align: center;
+      .dd{
+        display: inline;
+        position: relative;
+        top: 40px;
+        img{
+          position: absolute;
+          width: 40px;
+          float: left;
+        }
+        span{
+          font-size: 30px;
+          color: white;
+          margin-left: 55px;
+          font-weight: 700;
+        }
+      }
+      .feature{
+        top: 0;
+        position: absolute;
+        width: 100%;
+        button{
+          color: white;
+          position: absolute;
+          padding: 5px;
+          .icon{
+            font-size: 30px;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+
+    .segment{
+      top: 101px;
+      position: absolute;
+      z-index: 200;
+      height: 40px;
+      background-color: #fff;
+      .segment-button{
+        height: 100%;
+        font-size: 18px;
+        border: none;
+        color: #444444;
+        line-height: 40px;
+        border-bottom: 3px solid #e4e4e4;
+        border-radius: 0px !important;
+     }
+      .segment-button.segment-activated{
+       color: #0093ca;
+       height: 100%;
+       background-color: #fff;
+       border-bottom: 3px solid #0093ca;
+     }
+    }
+    .content-box{
+      top: 141px;
+      background-color:rgb(240,240,240);
+    }
+
+    .others-item-div{
+    margin-top:30px;
+    font-weight:bold;
+    font-size: 20px;
+  }
+
+  .close-icon{
+    width: 100%;
+    /* height: 20vw; */
+    text-align: center;
+    font-size: 13vw;
+    margin-top: 20px;
+  }
+
+  .desc-div{
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+    width: 70vw;
+    margin-left: 15vw;
+  }
+  .me-div{
+    .customer{
+        width: calc(100% - 100px);
+        background: transparent;
+        float: left;
+       .searchbar-input{
+         background-color: #cfcfcf;
+         height: 35px;
+       }
+    }
+    .search_bar{
+      overflow: overlay;
+    }
+    .filter{
+      float: left;
+      width: 90px;
+      height: 35px;
+      }
+
+    .filter_off{
+        background-color: #0093ca;
+    }
+    .filter_on{
+      border: 1px solid #0093ca;
+      background-color: #fff;
+      color: #0093ca;
+    }
+    .filter_list{
+      button{
+        height: 30px;
+        border-radius: 15px;
+        border-color: #0093ca;
+      }
+
+      .checkedClass {
+        background-color: #0093ca;
+        color: #fff;
+      }
+      .discheckedClass{
+
+        background-color: #fff;
+        color: #0093ca;
+      }
+    }
+
+  }
+
+
+
+
+}

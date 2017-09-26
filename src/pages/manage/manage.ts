@@ -5,10 +5,12 @@ import { NavController } from 'ionic-angular';
   selector: 'page-manage',
   templateUrl: 'manage.html'
 })
-export class SamplePage {
+export class ManagePage {
 
   constructor(public navCtrl: NavController) {
 
   }
-
+  closePage(){
+    this.navCtrl.pop();
+  }
 }
